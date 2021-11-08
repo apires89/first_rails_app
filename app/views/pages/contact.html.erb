@@ -1,0 +1,24 @@
+<h1>contact page</h1>
+<%= link_to "Home", root_path %>
+
+<h1><%= Time.now %></h1>
+
+<p><%= @members.sample %></p>
+
+<form action="/contact" method="get">
+  <input type="text" name="member" value="<%= params[:member] %>" placeholder="Who are you looking for?">
+
+  <input type="submit">
+</form>
+
+
+<h1>Meet the team</h1>
+<ul>
+  <% @members.each do |member| %>
+    <li>
+      <p><%= member %></p>
+    </li>
+  <% end %>
+</ul>
+
+
